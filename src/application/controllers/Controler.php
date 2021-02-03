@@ -22,7 +22,7 @@ class Controler extends CI_Controller {
         $this->load->helper('url');
         $this->load->library('session');
         $this->load->library('form_validation');
-        //$this->load->model('Model');
+        $this->load->model('Model');
     }
 
     /**
@@ -36,10 +36,37 @@ class Controler extends CI_Controller {
 	}
 
     /**
-     * Método que permite la creación de nuevo usuario
+     * Método que permite mostar la vista del registro
      */
-    public function create()
+    public function registro()
     {
-        $this->load->view('login');
+        $this->load->helper('url');
+        $this->load->helper('form');
+        $this->load->view('register');
+    }
+
+    /**
+     * Método que permite crear un nuevo usuario o indicar que es incorrecto
+     */
+    public function alta()
+    {
+        $this->load->helper('url');
+        $this->load->helper('form');
+        $correo = $this->input->post('usu');
+        $pw1 = $this->input->post('pw1');
+        $pwhash = password_hash($pw1, PASSWORD_BCRYPT);
+
+        $datos = array();
+        $datos['Correo'] = $correo;
+        $datos['Pw'] = $pwhash;
+        $datos['tipo'] = 0;
+        $error = $this->Model->alta($datos);
+
+        if ($error['code']!=0) {
+            echo 'Error al introducir el usuario';
+            //$this->load->view('welcome_message');
+        } else {
+            return $this->index();
+        }
     }
 }

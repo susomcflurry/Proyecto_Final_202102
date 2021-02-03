@@ -1,3 +1,8 @@
+//Nombre de autor:Jesús Canga Galván
+//Curso:2 DAW
+//Escuela: Escuela Virgen de Guadalupe
+//Proyecto fin de ciclo: Proyecto de Sistema de Gestión del Conocimiento
+//Año:2021
 const inputs = document.querySelectorAll(".input");
 
 
@@ -18,3 +23,4 @@ inputs.forEach(input => {
 	input.addEventListener("focus", addcl);
 	input.addEventListener("blur", remcl);
 });
+

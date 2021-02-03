@@ -20,12 +20,12 @@ echo '
         <img  src="'. base_url() .'img/download.jpg">
     </header>
     <img class="wave" src="'. base_url() .'img/wave.png">
-    <div class="container">
+    <div class="containerLogin">
         <div class="img">
             <img src="'. base_url() .'img/bg.svg">
         </div>
         <div class="login-content">
-            <form action="login.php">
+            <form action="' . base_url() . 'certified" method="post">
                 <img src="'. base_url() .'img/avatar.svg">
                 <h2 class="title">Bienvenido</h2>
                 <div class="input-div one">
@@ -34,7 +34,7 @@ echo '
                     </div>
                     <div class="div">
                         <h5>Usuario</h5>
-                        <input type="text" class="input">
+                        <input type="text" class="input" name="usu" required>
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -43,12 +43,11 @@ echo '
                     </div>
                     <div class="div">
                         <h5>Contraseña</h5>
-                        <input type="password" class="input">
+                        <input type="password" class="input" name="pw" required>
                     </div>
                 </div>
-                <a href="#">Olvidó contraseña?</a>
-                <a href="#">Es nuevo?</a>
-                <input type="submit" class="btn" value="Login">
+                <a href="'. base_url() .'Progreso">Olvidó contraseña?</a>
+                <input type="submit" class="loginbtn" value="Login">
             </form>
         </div>
     </div>

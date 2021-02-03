@@ -17,21 +17,21 @@ echo '
     </head>
     <body>
     <img class="wave" src="'. base_url() .'img/wave.png">
-    <div class="container">
+    <div class="containerReg">
         <div class="img">
             <img src="'. base_url() .'img/bg.svg">
         </div>
         <div class="login-content">
-            <form action="login.php">
-                <img src="'. base_url() .'img/avatar.svg">
-                <h2 class="title">Bienvenido</h2>
+            <form action="' . base_url() . 'alta" method="post">
+                <img  src="'. base_url() .'img/download.jpg">
+                <h2 class="title">Inscribase</h2>
                 <div class="input-div one">
                     <div class="i">
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="div">
-                        <h5>Usuario</h5>
-                        <input type="text" class="input">
+                        <h5>Correo</h5>
+                        <input type="text" class="input" name="usu" id="usu" onblur="validarcorreo()" required>
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -40,16 +40,24 @@ echo '
                     </div>
                     <div class="div">
                         <h5>Contraseña</h5>
-                        <input type="password" class="input">
+                        <input type="password" class="input" name="pw" id="pw1" required>
                     </div>
                 </div>
-                <a href="#">Olvidó contraseña?</a>
-                <a href="#">Es nuevo?</a>
-                <input type="submit" class="btn" value="Login">
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                         <h5> Vuelva a escribirla</h5>
+                         <input type="password" class="input" name="pw2" id="pw2" onblur="validarcorreo()" required>
+                    </div>
+                </div>
+                <input type="submit" class="registerbtn" id="regisbtn" value="Entrar" disabled>
             </form>
         </div>
     </div>
     <script type="text/javascript" src="'. base_url() .'js/main.js"></script>
+    <script type="text/javascript" src="'. base_url() .'js/validate.js"></script>
     </body>
     </html>'
 ?>
