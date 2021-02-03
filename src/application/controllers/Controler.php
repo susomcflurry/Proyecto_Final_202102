@@ -34,4 +34,12 @@ class Controler extends CI_Controller {
 	{
 		$this->load->view('login');
 	}
+
+    /**
+     * Método que permite la creación de nuevo usuario
+     */
+    public function create()
+    {
+        $this->load->view('login');
+    }
 }

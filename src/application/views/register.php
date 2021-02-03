@@ -16,9 +16,6 @@ echo '
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-    <header class="logohead">
-        <img  src="'. base_url() .'img/download.jpg">
-    </header>
     <img class="wave" src="'. base_url() .'img/wave.png">
     <div class="container">
         <div class="img">
