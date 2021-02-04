@@ -10,10 +10,8 @@ class Controler extends CI_Controller {
 
 
     /**
-     * Este es un resumen de la clase.
-     *
      * Esta es la clase que realizará todas las operaciones.
-     *
+     * Y aqui inicializamos las librerias necesarias y el modelo
      */
 
     public function __construct()
@@ -32,39 +30,120 @@ class Controler extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('login');
+        $this->load->helper('url');
+        if ($this->session->userdata('loged')) {
+            $this->load->view('home');
+        } else {
+            $this->load->view('Login');
+        }
 	}
 
+
+
     /**
-     * Método que permite mostar la vista del registro
+     * Metodo encargado de realizar el login
+     * Autenticando a los usuarios
+     *
      */
-    public function registro()
+
+    public function logearse()
     {
-        $this->load->helper('url');
-        $this->load->helper('form');
-        $this->load->view('register');
+        /**
+         * Introducimos los datos del formulario a variables
+        */
+        $usuario = $this->input->post("usu");
+        $password = $this->input->post("pw");
+
+        /**
+         * Comprobacion de usuario existente
+         */
+
+        $verify = $this->Model->autenticar($usuario);
+
+        $array = json_decode(json_encode($verify), true);
+
+        if(password_verify($password,$array['Pw']))
+        {
+            /**
+             * Creamos el array con los datos
+             * de la sesión
+             */
+            $sesion = array(
+                'id_usu' => $array['Id_Usuario'],
+                'correo' => $array['Correo'],
+                'nombre' => $array['Nombre'],
+                'type_usu' => $array['Tipo'],
+                'loged' => TRUE
+            );
+
+            $this->session->set_userdata($sesion);
+            return $this->index();
+
+        }
+        else
+        {
+            $this->load->view('welcome_message');
+        }
+
+
     }
 
     /**
-     * Método que permite crear un nuevo usuario o indicar que es incorrecto
+     * Método que muestra la vista con la información del usuario
+     */
+    public function profile()
+    {
+        $datos["perfil"] = $this->Model->datos($_SESSION['id_usu']);
+        $this->load->view('profile');
+    }
+
+
+    /**
+     * Metodo que destruye la sesión y devuelve al login
+     *
+     */
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        $this->load->view('login');
+    }
+
+
+
+    /**
+     * Método que permite crear 2 usuarios para pruebas
+     * un admin y un tipo profesor
      */
     public function alta()
     {
         $this->load->helper('url');
         $this->load->helper('form');
-        $correo = $this->input->post('usu');
-        $pw1 = $this->input->post('pw1');
+        $correo = "admin@admin.com";
+        $nombre = "admin";
+        $pw1 = "Prueba";
         $pwhash = password_hash($pw1, PASSWORD_BCRYPT);
 
         $datos = array();
         $datos['Correo'] = $correo;
         $datos['Pw'] = $pwhash;
+        $datos['Nombre'] = $nombre;
+        $datos['tipo'] = 0;
+        $error = $this->Model->alta($datos);
+
+        $correo = "prueba@gmail.com";
+        $nombre = "prueba";
+        $pw1 = "Prueba";
+        $pwhash = password_hash($pw1, PASSWORD_BCRYPT);
+
+        $datos = array();
+        $datos['Correo'] = $correo;
+        $datos['Pw'] = $pwhash;
+        $datos['Nombre'] = $nombre;
         $datos['tipo'] = 0;
         $error = $this->Model->alta($datos);
 
         if ($error['code']!=0) {
             echo 'Error al introducir el usuario';
-            //$this->load->view('welcome_message');
         } else {
             return $this->index();
         }

@@ -25,7 +25,7 @@ echo '
             <img src="'. base_url() .'img/bg.svg">
         </div>
         <div class="login-content">
-            <form action="' . base_url() . 'certified" method="post">
+            <form action="' . base_url() . 'log" method="post">
                 <img src="'. base_url() .'img/avatar.svg">
                 <h2 class="title">Bienvenido</h2>
                 <div class="input-div one">

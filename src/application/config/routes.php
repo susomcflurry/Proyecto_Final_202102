@@ -53,5 +53,8 @@ $route['default_controller'] = 'Controler';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['log']='Controler/logearse';
+$route['logout']='Controler/logout';
+$route['me']='Controler/profile';
 $route['signup']='Controler/registro';
 $route['alta']='Controler/alta';

@@ -19,15 +19,36 @@ class Model extends CI_Model
 
 
 	/**
-	 * Metodo que comprueba usuario y contraseña para iniciar sesión
+	 * Metodo verifica el usuario introducido en el login
 	 *
 	 */
 	public function autenticar($usuario)
 	{
 
-		$this->bd->select('id_usuario,correo,password,tipo');
-		$this->bd->from('usuario');
-		$this->bd->where("correo", $usuario);
+		$this->bd->select('Id_Usuario,Correo,Pw,Nombre,Tipo');
+		$this->bd->from('Usuario');
+		$this->bd->where("Correo", $usuario);
+
+		$resultado = $this->bd->get();
+
+		if ($resultado->num_rows() > 0) {
+			return $resultado->row();
+		} else {
+			return false;
+		}
+
+	}
+
+	/**
+	 * Metodo para obtener los datos del usuario
+	 *
+	 */
+	public function datos($usuario)
+	{
+
+		$this->bd->select('Id_Usuario,Correo,Pw,Nombre,Tipo');
+		$this->bd->from('Usuario');
+		$this->bd->where("Id_Usuario", $usuario);
 
 		$resultado = $this->bd->get();
 
