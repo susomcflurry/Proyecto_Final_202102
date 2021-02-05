@@ -5,6 +5,9 @@
 //Proyecto fin de ciclo: Proyecto de Sistema de Gestión del Conocimiento
 //Año:2021
 
+/**
+ * Class Model, es el modelo que gestiona todas las operaciones de BD
+ */
 class Model extends CI_Model
 {
 	var $bd = null;
@@ -20,7 +23,7 @@ class Model extends CI_Model
 
 	/**
 	 * Metodo verifica el usuario introducido en el login
-	 *
+	 * @param $usuario Son los datos del login, para verificar el usuario
 	 */
 	public function autenticar($usuario)
 	{

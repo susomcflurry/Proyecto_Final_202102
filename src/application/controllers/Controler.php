@@ -6,6 +6,9 @@
 //Año:2021
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Class Controler, será el controlador que realize todas las operaciones de la aplicación
+ */
 class Controler extends CI_Controller {
 
 
@@ -26,7 +29,7 @@ class Controler extends CI_Controller {
     /**
 	 * Por ahora metodo de inicio de la app
      *
-     * Solo dirige a lo qiue por ahora será el login
+     * Solo dirige a lo que por ahora será el login
 	 */
 	public function index()
 	{
