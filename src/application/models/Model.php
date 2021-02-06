@@ -28,9 +28,9 @@ class Model extends CI_Model
 	public function autenticar($usuario)
 	{
 
-		$this->bd->select('Id_Usuario,Correo,Pw,Nombre,Tipo');
+		$this->bd->select('id,correo');
 		$this->bd->from('Usuario');
-		$this->bd->where("Correo", $usuario);
+		$this->bd->where("correo", $usuario);
 
 		$resultado = $this->bd->get();
 

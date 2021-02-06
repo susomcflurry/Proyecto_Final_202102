@@ -21,7 +21,9 @@ include ('menu.php');
 echo'
     <body>
     <img class="wave2" src="'. base_url() .'img/wave2.png">
-    </div>
+    <div>
+    
+</div>
     <script type="text/javascript" src="'. base_url() .'js/main.js"></script>
     <script type="text/javascript" src="'. base_url() .'js/validate.js"></script>
     </body>

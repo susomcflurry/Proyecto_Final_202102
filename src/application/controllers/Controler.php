@@ -22,8 +22,10 @@ class Controler extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->library('session');
+        $this->load->library('google'); /*Libreria de Google necesaria*/
         $this->load->library('form_validation');
         $this->load->model('Model');
+        $this->comprobacion();
     }
 
     /**
@@ -96,19 +98,7 @@ class Controler extends CI_Controller {
      */
     public function profile()
     {
-        $datos["perfil"] = $this->Model->datos($_SESSION['id_usu']);
         $this->load->view('profile');
-    }
-
-
-    /**
-     * Metodo que destruye la sesión y devuelve al login
-     *
-     */
-    public function logout()
-    {
-        $this->session->sess_destroy();
-        $this->load->view('login');
     }
 
 
@@ -149,6 +139,23 @@ class Controler extends CI_Controller {
             echo 'Error al introducir el usuario';
         } else {
             return $this->index();
+        }
+    }
+
+    /**
+     * Se comprueba el login del usuario
+     *
+     * Si el usuario no está logueado se redirige al controlador Auth, si está logueado el usuario se mantiene en la página
+     */
+    public function comprobacion()
+    { //Codeigniter no deja extender de varias clases y al crear objeto no salen los metodos de la otra clase, asi que repetiré este metodo comprobacion en todos los sitios ¯\_(ツ)_/¯
+        $data['google_login_url'] = $this->google->get_login_url();
+        if (file_exists(APPPATH . 'controllers\Instalacion.php')) {
+            redirect(Instalacion::class);
+        } else {
+            if ($this->session->userdata('sess_logged_in') == 0) {
+                redirect(Auth::class);
+            }
         }
     }
 }
