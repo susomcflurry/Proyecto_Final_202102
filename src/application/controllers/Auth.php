@@ -66,13 +66,13 @@ class Auth extends CI_Controller
         $verify = $this->Model->autenticar($google_data['email']);
         $array = json_decode(json_encode($verify), true);
         if($google_data['email']==$array['correo']){
-            $this->load->view('home', $data);
+            redirect(base_url());
         }else{
             $datos = array();
             $datos['correo'] = $google_data['email'];
             $datos['nombre'] = $google_data['name'];
             $this->Model->alta($datos);
-            $this->load->view('home', $data);
+            redirect(base_url());
         }
 
     }
