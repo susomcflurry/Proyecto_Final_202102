@@ -64,6 +64,26 @@ class Model extends CI_Model
 	}
 
 	/**
+	 * Metodo para obtener los datos de los tesauros principales
+	 *
+	 */
+	public function tesauros()
+	{
+		$query = "SELECT * FROM `Tesauro` WHERE id LIKE '_'";
+		return $resultados = $this->bd->query($query);
+
+
+	}
+
+	/**
+	 * Método que continua con la busqueda de tesauros
+	 */
+	public function conttesauros($id){
+		$query = "SELECT * FROM `Tesauro` WHERE id LIKE '".$id."._'";
+		return $resultados = $this->bd->query($query);
+	}
+
+	/**
 	 * Metodo que registra un nuevo usuario
 	 *
 	 */

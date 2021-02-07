@@ -29,68 +29,26 @@ class Controler extends CI_Controller {
     }
 
     /**
-	 * Por ahora metodo de inicio de la app
-     *
-     * Solo dirige a lo que por ahora será el login
-	 */
-	public function index()
-	{
-        $this->load->helper('url');
-        if ($this->session->userdata('loged')) {
-            $this->load->view('home');
-        } else {
-            $this->load->view('Login');
-        }
-	}
-
-
+     * Este es el método para ir a la vista para crear un nuevo recurso
+     */
+    public function newrecur()
+    {
+        $result= $this->Model->tesauros();
+        $data = array('consulta'=>$result);
+        $this->load->view('new', $data);
+    }
 
     /**
-     * Metodo encargado de realizar el login
-     * Autenticando a los usuarios
-     *
+     * Método para continuar la busqueda de tesauro
      */
-
-    public function logearse()
-    {
-        /**
-         * Introducimos los datos del formulario a variables
-        */
-        $usuario = $this->input->post("usu");
-        $password = $this->input->post("pw");
-
-        /**
-         * Comprobacion de usuario existente
-         */
-
-        $verify = $this->Model->autenticar($usuario);
-
-        $array = json_decode(json_encode($verify), true);
-
-        if(password_verify($password,$array['Pw']))
-        {
-            /**
-             * Creamos el array con los datos
-             * de la sesión
-             */
-            $sesion = array(
-                'id_usu' => $array['Id_Usuario'],
-                'correo' => $array['Correo'],
-                'nombre' => $array['Nombre'],
-                'type_usu' => $array['Tipo'],
-                'loged' => TRUE
-            );
-
-            $this->session->set_userdata($sesion);
-            return $this->index();
-
+    public function newcont($id){
+        $result= $this->Model->conttesauros($id);
+        if ($result->num_rows() > 0){
+            $data = array('consulta'=>$result);
+            $this->load->view('new', $data);
+        }else{
+            $this->load->view('create', array('id' => $id));
         }
-        else
-        {
-            $this->load->view('welcome_message');
-        }
-
-
     }
 
     /**
@@ -103,44 +61,7 @@ class Controler extends CI_Controller {
 
 
 
-    /**
-     * Método que permite crear 2 usuarios para pruebas
-     * un admin y un tipo profesor
-     */
-    public function alta()
-    {
-        $this->load->helper('url');
-        $this->load->helper('form');
-        $correo = "admin@admin.com";
-        $nombre = "admin";
-        $pw1 = "Prueba";
-        $pwhash = password_hash($pw1, PASSWORD_BCRYPT);
 
-        $datos = array();
-        $datos['Correo'] = $correo;
-        $datos['Pw'] = $pwhash;
-        $datos['Nombre'] = $nombre;
-        $datos['tipo'] = 0;
-        $error = $this->Model->alta($datos);
-
-        $correo = "prueba@gmail.com";
-        $nombre = "prueba";
-        $pw1 = "Prueba";
-        $pwhash = password_hash($pw1, PASSWORD_BCRYPT);
-
-        $datos = array();
-        $datos['Correo'] = $correo;
-        $datos['Pw'] = $pwhash;
-        $datos['Nombre'] = $nombre;
-        $datos['tipo'] = 0;
-        $error = $this->Model->alta($datos);
-
-        if ($error['code']!=0) {
-            echo 'Error al introducir el usuario';
-        } else {
-            return $this->index();
-        }
-    }
 
     /**
      * Se comprueba el login del usuario

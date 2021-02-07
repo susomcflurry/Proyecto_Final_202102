@@ -9,33 +9,30 @@ echo '
 <!DOCTYPE html>
     <html>
     <head>
-        <title>Login</title>
+        <title>Profile</title>
         <link rel="stylesheet" type="text/css" href="'. base_url() .'css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/a81368914c.js"></script>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
+    </head>';
+include ('menu.php');
+echo'
     <body>
-    <header class="logohead">
-        <img  src="'. base_url() .'img/download.jpg">
-    </header>
-    <img class="wave" src="'. base_url() .'img/wave.png">
-    <div class="containerLogin">
-        <div class="img">
-            <img src="'. base_url() .'img/bg.svg">
+    <img class="wave2" src="'. base_url() .'img/wave2.png">
+    <div><h3 class="titletesa">Elige uno</h3> </br></div>
+    <div class="row">';
+foreach ($consulta->result() as $tesa):
+echo' <div class="col-6 tesa"><a href="'.base_url().'tesaurocont/'.$tesa->id .'" class="tesa">'. $tesa->título . '</a></div></br> </br>';
+endforeach;
+echo '
         </div>
         <div class="login-content">
-            <form action="' . base_url() . 'log" method="post">
-                <img src="'. base_url() .'img/avatar.svg">
-                <h2 class="title">Bienvenido</h2>
-                <a href="'. $google_login_url .'" class=""><span
-                class="fa fa-google left fa-2x"></span>LOGIN
-        GOOGLE</a><!--Redirige al autenticador de google-->
-            </form>
         </div>
     </div>
     <script type="text/javascript" src="'. base_url() .'js/main.js"></script>
+    <script type="text/javascript" src="'. base_url() .'js/validate.js"></script>
     </body>
     </html>'
 ?>

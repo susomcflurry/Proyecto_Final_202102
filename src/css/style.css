@@ -216,6 +216,31 @@ a:hover{
 	color: #38d39f;
 }
 
+a.tesa{
+	float: left;
+	text-align: center;
+	text-decoration: none;
+	color: #999999 !important;
+	font-size: 1.6rem;
+	transition: .3s;
+	width: 100%;
+}
+a.tesa:hover{
+	color: #0aea51 !important;
+}
+
+.tesa{
+	width: 100%;
+	padding: 0;
+	float: right;
+}
+
+.titletesa{
+	text-align: center;
+}
+
+
+
 .loginbtn{
 	display: block;
 	width: 100%;

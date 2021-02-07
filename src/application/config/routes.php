@@ -58,3 +58,5 @@ $route['logout']='Auth/logout';
 $route['me']='Controler/profile';
 $route['signup']='Controler/registro';
 $route['alta']='Controler/alta';
+$route['new']='Controler/newrecur';
+$route['tesaurocont/(:any)']='Controler/newcont/$1';
