@@ -60,3 +60,4 @@ $route['signup']='Controler/registro';
 $route['alta']='Controler/alta';
 $route['new']='Controler/newrecur';
 $route['tesaurocont/(:any)']='Controler/newcont/$1';
+$route['create/(:any)']="Controler/createrecur/$1";

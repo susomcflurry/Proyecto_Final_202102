@@ -21,41 +21,14 @@ include ('menu.php');
 echo'
     <body>
     <img class="wave2" src="'. base_url() .'img/wave2.png">
-    <div class="containerLogin">
-        <div class="img">
-           <img src="'. base_url() .'img/avatar.svg">
+    <div><h3 class="titletesa">Tus recursos</h3> </br></div>
+    <div class="row">';
+foreach ($consulta->result() as $tesa):
+    echo' <div class="col-6 tesa"><a href="'.base_url().'archivos/'.$tesa->url .'" class="tesa">'. $tesa->título . '</a></div></br> </br>';
+endforeach;
+echo '
         </div>
         <div class="login-content">
-            <form action="' . base_url() . 'log" method="post">';
-                if (http_response_code(403)) {
-                    echo '<img src="'. base_url() .'img/avatar.svg">';
-                        } else{
-                    echo '<img class=" img img-fluid" src="'. $_SESSION['profile_pic'] .'" alt="imagencuenta">';
-                        }
-echo '               
-                <h2 class="title">'. $_SESSION['name'] .'</h2>
-                <h2 class="title">'. $_SESSION['email'] .'</h2>
-                <div class="input-div one">
-                    <div class="i">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="div">
-                        <h5>Usuario</h5>
-                        <input type="text" class="input" name="usu" required>
-                    </div>
-                </div>
-                <div class="input-div pass">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="div">
-                        <h5>Contraseña</h5>
-                        <input type="password" class="input" name="pw" required>
-                    </div>
-                </div>
-                <a href="'. base_url() .'Progreso">Olvidó contraseña?</a>
-               
-            </form>
         </div>
     </div>
     <script type="text/javascript" src="'. base_url() .'js/main.js"></script>

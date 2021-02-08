@@ -220,7 +220,7 @@ a.tesa{
 	float: left;
 	text-align: center;
 	text-decoration: none;
-	color: #999999 !important;
+	color: #4a4a4a !important;
 	font-size: 1.6rem;
 	transition: .3s;
 	width: 100%;
@@ -239,7 +239,36 @@ a.tesa:hover{
 	text-align: center;
 }
 
+.textbox
+{
+	border: 1px solid #999999;
+	font-size: 18px;
+	font-family: Arial, Verdana;
+	padding-left: 7px;
+	padding-right: 7px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-o-border-radius: 4px;
+	background: #999999;
+	background: linear-gradient(left, #999999, #999999);
+	background: -moz-linear-gradient(left, #999999, #999999);
+	background: -webkit-linear-gradient(left, #999999, #999999);
+	background: -o-linear-gradient(left, #999999, #999999);
+	color: #2E3133;
+}
 
+.textbox:focus
+{
+	color: #2E3133;
+	border-color: #FBFFAD;
+}
+
+.file{
+	margin-top: 5% !important;
+}
 
 .loginbtn{
 	display: block;

@@ -22,8 +22,10 @@ echo'
     <body>
     <img class="wave2" src="'. base_url() .'img/wave2.png">
     <div class="containerLogin">
-        <div class="login-content">
-           <form action="' . base_url() . 'log" method="post">
+        <div class="login-content">';
+echo form_open_multipart('Controler/createrecur/'.$id);
+echo'
+           <form action="" method="" >
                 <h3>Creando nuevo registro</h3>
                 <div class="input-div one">
                     <div class="i">
@@ -34,16 +36,12 @@ echo'
                         <input type="text" class="input" name="usu" required>
                     </div>
                 </div>
-                <div class="input-div pass">
-                    <div class="i">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div class="div">
-                        <h5>Descripción</h5>
-                        <input type="password" class="input" name="pw" required>
-                    </div>
+                <textarea type="textarea" class="textbox" name="descripcion" rows="10" cols="37" required>Describa el recurso</textarea> 
+                <div class="file">
+                    <h5>Documento</h5>
+                    <input type="file" name="file" accept="application/pdf" required/>
                 </div>
-               
+                <input type="submit" class="loginbtn" value="Subir registro">
             </form>
         </div>
         

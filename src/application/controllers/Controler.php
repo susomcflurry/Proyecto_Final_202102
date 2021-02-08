@@ -21,6 +21,8 @@ class Controler extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->helper('array');
+        $this->load->helper('file');
         $this->load->library('session');
         $this->load->library('google'); /*Libreria de Google necesaria*/
         $this->load->library('form_validation');
@@ -52,11 +54,52 @@ class Controler extends CI_Controller {
     }
 
     /**
-     * Método que muestra la vista con la información del usuario
+     * Método que crea el nuevo recurso una vez introducidos los datos
+     * @param $id Guarad el id del tesauro
+     */
+    public function createrecur($id){
+        $config['upload_path'] = 'archivos/';
+        // set allowed file types
+        $config['allowed_types'] = 'pdf';
+        // set upload limit, set 0 for no limit
+        $config['max_size'] = 0;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if ( ! $this->upload->do_upload('file')) {
+            $error = array('error' => $this->upload->display_errors());
+            print_r($error);
+            print_r($this->upload->data());
+        }
+
+        else {
+            $file = $this->upload->data();
+            $usu = $this->Model->getusu();
+            $data = array(
+
+                'título' => $this->input->post("usu"),
+                'descripción' => $this->input->post("descripcion"),
+                'url' => $file["file_name"],
+                'id_tesauro' => $id,
+                'id_usuario' => $usu[0]['id']
+            );
+            $this->Model->subirrecur($data);
+            $this->profile();
+        }
+    }
+
+    /**
+     * Método que muestra la vista con la información de los recursos del usuario
      */
     public function profile()
     {
-        $this->load->view('profile');
+        $usu = $this->Model->getusu();
+        $data = $this->Model->getrecur($usu[0]['id']);
+        if($data->num_rows() > 0){
+            $datos = array('consulta'=>$data);
+            $this->load->view('profile', $datos);
+        }else
+            $this->load->view('vacio');
     }
 
 

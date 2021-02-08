@@ -42,26 +42,6 @@ class Model extends CI_Model
 
 	}
 
-	/**
-	 * Metodo para obtener los datos del usuario
-	 *
-	 */
-	public function datos($usuario)
-	{
-
-		$this->bd->select('Id_Usuario,Correo,Pw,Nombre,Tipo');
-		$this->bd->from('Usuario');
-		$this->bd->where("Id_Usuario", $usuario);
-
-		$resultado = $this->bd->get();
-
-		if ($resultado->num_rows() > 0) {
-			return $resultado->row();
-		} else {
-			return false;
-		}
-
-	}
 
 	/**
 	 * Metodo para obtener los datos de los tesauros principales
@@ -92,6 +72,40 @@ class Model extends CI_Model
 		$this->bd->insert('Usuario', $datos);
 		$error=$this->bd->error();
 		return $error;
+	}
+
+	/**
+	 * Método que nos devuelve el id del usuario de la sesión
+	 */
+	public function getusu(){
+		$this->bd->select('id');
+		$this->bd->from('Usuario');
+		$this->bd->where("correo", $_SESSION['email']);
+
+		$resultado = $this->bd->get();
+		return $resultado->result_array();
+	}
+
+	/**
+	 *Método que crea el recurso en la bbdd
+	 * @param $datos Guarda los datos que se an a subir a la bbdd
+	 */
+	public function subirrecur($datos){
+		$this->bd->insert('Recurso', $datos);
+		$error=$this->bd->error();
+		return $error;
+	}
+
+	/**
+	 * Método para obtener los recursos del usuario
+	 * @param $id Id del usuario para buscar sus recursos
+	 */
+	public function getrecur($id){
+		$this->bd->select('*');
+		$this->bd->from('Recurso');
+		$this->bd->where('id_usuario', $id);
+		$resultado = $this->bd->get();
+		return $resultado;
 	}
 }
 
