@@ -21,12 +21,10 @@ include ('menu.php');
 echo'
     <body>
     <img class="wave2" src="'. base_url() .'img/wave2.png">
-    <div><h3 class="titletesa">Tus recursos</h3> </br></div>
+    <div><h3 class="titletesa">Elige uno</h3> </br></div>
     <div class="row">';
 foreach ($consulta->result() as $tesa):
-    echo' <div class="col-6 tesa">
-            <a href="'.base_url().'archivos/'.$tesa->url .'" class="tesa">'. $tesa->título . '</a>
-            <a href="'.base_url().'delete/'.$tesa->id.'">Borrar</a></div></br> </br>';
+echo' <div class="col-6 tesa"><a href="'.base_url().'tesauroconsult/'.$tesa->id .'" class="tesa">'. $tesa->título . '</a></div></br> </br>';
 endforeach;
 echo '
         </div>

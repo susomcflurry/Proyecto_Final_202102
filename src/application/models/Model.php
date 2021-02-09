@@ -107,6 +107,25 @@ class Model extends CI_Model
 		$resultado = $this->bd->get();
 		return $resultado;
 	}
+
+	/**
+	 * Método para obtener los recursos del usuario
+	 * @param $id Id del tesauro para buscar sus recursos
+	 */
+	public function getrecursos($id){
+
+		$query = "SELECT * FROM Recurso INNER JOIN Usuario on Recurso.id_usuario = Usuario.id where Recurso.id_tesauro ='".$id."';";
+		return $resultados = $this->bd->query($query);
+	}
+
+	/**
+	 * Método para borrar un recurso
+	 * @param $id id del recurso a borrar
+	 */
+	public function borrar($id){
+		$query = "DELETE FROM `Recurso` WHERE `Recurso`.`id` = ".$id.";";
+		$this->bd->query($query);
+	}
 }
 
 ?>

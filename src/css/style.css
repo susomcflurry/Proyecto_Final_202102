@@ -229,6 +229,10 @@ a.tesa:hover{
 	color: #0aea51 !important;
 }
 
+.autor{
+	text-align: center;
+	color: #999999;
+}
 .tesa{
 	width: 100%;
 	padding: 0;

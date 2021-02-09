@@ -102,6 +102,32 @@ class Controler extends CI_Controller {
             $this->load->view('vacio');
     }
 
+    /**
+     * Método para continuar la busqueda de tesauro
+     */
+    public function consult($id){
+        $result= $this->Model->conttesauros($id);
+        if ($result->num_rows() > 0){
+            $data = array('consulta'=>$result);
+            $this->load->view('tesa', $data);
+        }else{
+            $result= $this->Model->getrecursos($id);
+            if ($result->num_rows() > 0){
+                $data = array('consulta'=>$result);
+                $this->load->view('recur', $data);
+            }else
+                $this->load->view('vacio');
+        }
+    }
+
+    /**
+     * Método para borrar un recurso
+     * @param $id id del recurso a borrar
+     */
+    public function delete($id){
+        $this->Model->borrar($id);
+        return $this->profile();
+    }
 
 
 

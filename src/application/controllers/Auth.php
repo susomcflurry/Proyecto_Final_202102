@@ -100,7 +100,9 @@ class Auth extends CI_Controller
     {
         $data['google_login_url'] = $this->google->get_login_url();
         if ($this->session->userdata('sess_logged_in') == 1) {
-            $this->load->view('home');
+            $result= $this->Model->tesauros();
+            $data = array('consulta'=>$result);
+            $this->load->view('home', $data);
         } else {
             $this->load->view('login', $data);
         }

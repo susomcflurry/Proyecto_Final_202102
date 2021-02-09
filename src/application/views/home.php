@@ -9,7 +9,7 @@ echo '
 <!DOCTYPE html>
     <html>
     <head>
-        <title>Home</title>
+        <title>Profile</title>
         <link rel="stylesheet" type="text/css" href="'. base_url() .'css/style.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -21,9 +21,16 @@ include ('menu.php');
 echo'
     <body>
     <img class="wave2" src="'. base_url() .'img/wave2.png">
-    <div>
-    
-</div>
+    <div><h3 class="titletesa">BUSCA UN RECURSO</h3> </br></div>
+    <div class="row">';
+foreach ($consulta->result() as $tesa):
+    echo' <div class="col-6 tesa"><a href="'.base_url().'tesauroconsult/'.$tesa->id .'" class="tesa">'. $tesa->título . '</a></div></br> </br>';
+endforeach;
+echo '
+        </div>
+        <div class="login-content">
+        </div>
+    </div>
     <script type="text/javascript" src="'. base_url() .'js/main.js"></script>
     <script type="text/javascript" src="'. base_url() .'js/validate.js"></script>
     </body>
