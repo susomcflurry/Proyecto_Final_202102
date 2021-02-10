@@ -102,6 +102,9 @@ body{
 form{
 	width: 360px;
 }
+.registro > form{
+	margin: 0 auto;
+}
 
 .login-content img{
     height: 100px;

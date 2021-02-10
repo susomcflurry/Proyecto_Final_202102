@@ -29,9 +29,8 @@ echo '
             <form action="' . base_url() . 'log" method="post">
                 <img src="'. base_url() .'img/avatar.svg">
                 <h2 class="title">Bienvenido</h2>
-                <a href="'. $google_login_url .'" class=""><span
-                class="fa fa-google left fa-2x"></span>LOGIN
-        GOOGLE</a><!--Redirige al autenticador de google-->
+                <a style="text-align: center;" href="'. $google_login_url .'" class="">->LOGIN
+        GOOGLE<-</a><!--Redirige al autenticador de google-->
             </form>
         </div>
     </div>

@@ -7,10 +7,10 @@
     echo '
     <header>
         <div class="row">
-            <div class="col-6">
+            <div class="col-4">
                  <img  src="'. base_url() .'img/download.jpg">
             </div>
-            <div class="col-6 topnav">
+            <div class="col-8 topnav">
                 <ul>
                     <li><a href="' . base_url() . '"><span class="material-icons">search</span>Buscar recurso</a></li>
                     <li><a href="' . base_url() . 'new"><span class="material-icons">note_add</span>Nuevo Recurso</a></li>

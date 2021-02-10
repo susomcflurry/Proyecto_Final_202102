@@ -21,16 +21,12 @@ include ('menu.php');
 echo'
     <body>
     <img class="wave2" src="'. base_url() .'img/wave2.png">
-    <div class="containerLogin">
-        <div class="login-content">';
+    <div class="row registro" style="text-align: center; align-content: center; margin: 0 auto;">';
 echo form_open_multipart('Controler/createrecur/'.$id);
 echo'
            <form action="" method="" >
                 <h3>Creando nuevo registro</h3>
                 <div class="input-div one">
-                    <div class="i">
-                        <i class="fas fa-user"></i>
-                    </div>
                     <div class="div">
                         <h5>Título</h5>
                         <input type="text" class="input" name="usu" required>
@@ -43,9 +39,6 @@ echo'
                 </div>
                 <input type="submit" class="loginbtn" value="Subir registro">
             </form>
-        </div>
-        
-       
     </div>
     <script type="text/javascript" src="'. base_url() .'js/main.js"></script>
     <script type="text/javascript" src="'. base_url() .'js/validate.js"></script>
