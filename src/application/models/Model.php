@@ -88,7 +88,7 @@ class Model extends CI_Model
 
 	/**
 	 *Método que crea el recurso en la bbdd
-	 * @param $datos Guarda los datos que se an a subir a la bbdd
+	 * @param $datos Guarda los datos que se van a subir a la bbdd
 	 */
 	public function subirrecur($datos){
 		$this->bd->insert('Recurso', $datos);
@@ -119,11 +119,54 @@ class Model extends CI_Model
 	}
 
 	/**
-	 * Método para borrar un recurso
+	 * Método para borrar un el documento de un recurso
 	 * @param $id id del recurso a borrar
 	 */
 	public function borrar($id){
 		$query = "DELETE FROM `Recurso` WHERE `Recurso`.`id` = ".$id.";";
+		$this->bd->query($query);
+	}
+
+	/**
+	 * Método para borrar un recurso
+	 * @param $id id del recurso a borrar
+	 */
+	public function unlink($id){
+		$query = "Select url from Recurso where id =".$id.";";
+		$resultado = $this->bd->query($query);
+		foreach ($resultado->result() as $row)
+		{
+			return $row->url;
+		}
+	}
+
+	/**
+	 * Método para sleccionar los datos de un recurso
+	 * @param $id id del recurso a borrar
+	 */
+	public function mod($id){
+		$this->bd->select('*');
+		$this->bd->from('Recurso');
+		$this->bd->where('id', $id);
+		$resultado = $this->bd->get();
+		return $resultado;
+	}
+
+	/**
+	 *Método que modifica el recurso en la bbdd
+	 * @param $datos Guarda los datos que se van a modficar a la bbdd
+	 */
+	public function modrecur($datos){
+		$query = "UPDATE `Recurso` SET `título` = '" . $datos[0]['título'] . "', `descripción` = '" . $datos[0]['descripción'] . "' WHERE `Recurso`.`id` = " . $datos[0]['id'] . ";";
+		$this->bd->query($query);
+	}
+
+	/**
+	 *Método que modifica el recurso en la bbdd junto a url
+	 * @param $datos Guarda los datos que se van a modficar a la bbdd
+	 */
+	public function modrecururl($datos){
+		$query = "UPDATE `Recurso` SET `título` = '" . $datos[0]['título'] . "', `descripción` = '" . $datos[0]['descripción'] . "', `url` = '" . $datos[0]['url'] . "' WHERE `Recurso`.`id` = " . $datos[0]['id'] . ";";
 		$this->bd->query($query);
 	}
 }

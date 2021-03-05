@@ -125,11 +125,56 @@ class Controler extends CI_Controller {
      * @param $id id del recurso a borrar
      */
     public function delete($id){
+        unlink('archivos/'.$this->Model->unlink($id));
         $this->Model->borrar($id);
         return $this->profile();
     }
 
+    /**
+     * Método para modificar un recurso
+     * @param $id id del recurso a modificar
+     */
+    public function mod($id){
+        $result = $this->Model->mod($id);
+        $data = array('consulta'=>$result);
+        $this->load->view('mod', $data);
+    }
 
+    /**
+     * Método para finalizar los datos modificados del recurso
+     */
+    public function modrecur($id){
+        $config['upload_path'] = 'archivos/';
+        // set allowed file types
+        $config['allowed_types'] = 'pdf';
+        // set upload limit, set 0 for no limit
+        $config['max_size'] = 0;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);
+
+        if ( ! $this->upload->do_upload('file')) {
+            $data[] = array(
+                'id' => $id,
+                'título' => $this->input->post("usu"),
+                'descripción' => $this->input->post("descripcion"),
+            );
+            $this->Model->modrecur($data);
+            $this->profile();
+        }
+
+        else {
+            unlink('archivos/'.$this->Model->unlink($id));
+            $file = $this->upload->data();
+            $data[] = array(
+                'id' => $id,
+                'título' => $this->input->post("usu"),
+                'descripción' => $this->input->post("descripcion"),
+                'url' => $file["file_name"],
+            );
+            $this->Model->modrecururl($data);
+            $this->profile();
+        }
+    }
 
 
     /**

@@ -63,3 +63,5 @@ $route['tesaurocont/(:any)']='Controler/newcont/$1';
 $route['tesauroconsult/(:any)']='Controler/consult/$1';
 $route['create/(:any)']="Controler/createrecur/$1";
 $route['delete/(:any)']="Controler/delete/$1";
+$route['mod/(:any)']="Controler/mod/$1";
+$route['modrecur/(:any)']="Controler/modrecur/$1";

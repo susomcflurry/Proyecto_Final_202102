@@ -21,21 +21,28 @@ include ('menu.php');
 echo'
     <body>
     <img class="wave2" src="'. base_url() .'img/wave2.png">
-    <div><h3 class="titletesa">Tus recursos</h3> </br></div>
-    <div class="row">';
+    <div class="row registro" style="text-align: center; align-content: center; margin: 0 auto;">';
 foreach ($consulta->result() as $tesa):
-    echo' <div class="col-6 tesa">
-            <a href="'.base_url().'archivos/'.$tesa->url .'" class="tesa">'. $tesa->título . '</a>
-            <a href="'.base_url().'delete/'.$tesa->id.'">Borrar</a>
-            <a href="'.base_url().'mod/'.$tesa->id.'">Modificar</a></div></br> </br>';
-endforeach;
-echo '
-        </div>
-        <div class="login-content">
-        </div>
+echo form_open_multipart('Controler/modrecur/'.$tesa->id);
+echo'
+           <form action="" method="" >
+                <h3>Modifique su registro</h3>
+                <div class="input-div one">
+                    <div class="div">
+                        <input type="text" class="input" name="usu" value="'.$tesa->título .'" required>
+                    </div>
+                </div>
+                <textarea type="textarea" class="textbox" name="descripcion" rows="10" cols="37" required>'.$tesa->descripción.'</textarea> 
+                <div class="file">
+                    <h5>Documento</h5>
+                    <input type="file" name="file" accept="application/pdf"/>
+                </div>
+                <input type="submit" class="loginbtn" value="Modificar">
+            </form>
     </div>
     <script type="text/javascript" src="'. base_url() .'js/main.js"></script>
     <script type="text/javascript" src="'. base_url() .'js/validate.js"></script>
     </body>
-    </html>'
+    </html>';
+endforeach;
 ?>
