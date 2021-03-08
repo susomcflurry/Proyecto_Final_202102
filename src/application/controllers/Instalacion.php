@@ -1,4 +1,25 @@
--- phpMyAdmin SQL Dump
+<?php if (!defined('BASEPATH')) exit('No direct script access allowed');
+//Nombre de autor:Jesús Canga Galván
+//Curso:2 DAW
+//Escuela: Escuela Virgen de Guadalupe
+//Proyecto fin de ciclo: Proyecto de Sistema de Gestión del Conocimiento
+//Año:2021
+
+/**
+ * Class Instalacion
+ */
+class Instalacion extends CI_Controller
+{
+
+    /**
+     * Constructor Instalacion
+     * Carga librerias y helpers, para después crear la bd y redirigir a Auth
+     */
+    function __construct()
+    {
+        parent::__construct();
+        $this->conexion = new mysqli('localhost', 'root', '');
+        $consulta = "-- phpMyAdmin SQL Dump
 -- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
@@ -6,10 +27,6 @@
 -- Tiempo de generación: 08-03-2021 a las 19:50:17
 -- Versión del servidor: 10.4.16-MariaDB
 -- Versión de PHP: 7.4.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
 
 DROP DATABASE IF EXISTS `Sys_gestion_conocimiento`;
 CREATE DATABASE  `Sys_gestion_conocimiento` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
@@ -135,3 +152,13 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+";
+        $this->conexion->multi_query($consulta);
+        $archivoroutes = fopen(APPPATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'routes.php', "a+");
+        $texto = '$route["default_controller"] = "Auth";';
+        fwrite($archivoroutes, "\n");
+        fwrite($archivoroutes, $texto);
+        fclose($archivoroutes);
+        redirect("Auth");
+    }
+}

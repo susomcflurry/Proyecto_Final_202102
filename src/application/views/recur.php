@@ -8,6 +8,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 echo '
 <!DOCTYPE html>
     <html>
+    <style>
+    .limitado{
+       margin: 0;
+    }
+    </style>
     <head>
         <title>Profile</title>
         <link rel="stylesheet" type="text/css" href="'. base_url() .'css/style.css">
@@ -26,6 +31,7 @@ echo'
 foreach ($consulta->result() as $tesa):
     echo' <div class="col-6 tesa">
             <a href="'.base_url().'archivos/'.$tesa->url .'" class="tesa">'. $tesa->título . '</a>
+            <p class="autor limitado">'.$tesa->descripción.'</p>
             <p class="autor"> por '.$tesa->nombre.'</p>
             </div></br> </br>';
 endforeach;

@@ -53,8 +53,9 @@ $route['default_controller'] = 'Auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['log']='Auth/oauth2callback';
-$route['logout']='Auth/logout';
+
+$route['log']='Auth2/oauth2callback';
+$route['logout']='Auth2/logout';
 $route['me']='Controler/profile';
 $route['signup']='Controler/registro';
 $route['alta']='Controler/alta';
