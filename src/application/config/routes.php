@@ -54,8 +54,8 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-$route['log']='Auth2/oauth2callback';
-$route['logout']='Auth2/logout';
+$route['log']='Auth/oauth2callback';
+$route['logout']='Auth/logout';
 $route['me']='Controler/profile';
 $route['signup']='Controler/registro';
 $route['alta']='Controler/alta';
@@ -66,3 +66,4 @@ $route['create/(:any)']="Controler/createrecur/$1";
 $route['delete/(:any)']="Controler/delete/$1";
 $route['mod/(:any)']="Controler/mod/$1";
 $route['modrecur/(:any)']="Controler/modrecur/$1";
+$route['insta']="Insta";

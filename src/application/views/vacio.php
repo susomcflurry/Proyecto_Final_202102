@@ -16,16 +16,32 @@ echo '
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/a81368914c.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>';
+    </head>
+    <style type="text/css">
+  .btnrecur{
+    margin: 0 auto;
+    text-decoration: none;
+    text-align: center;
+    width: 20%;
+    padding: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 2px solid #0016b0;
+  }
+  .btnrecur:hover{
+    color: #1883ba;
+    background-color: #ffffff;
+  }
+</style>';
 include ('menu.php');
 echo'
     <body>
     <img class="wave2" src="'. base_url() .'img/wave2.png">
-    <div><h3 class="titletesa">Aún no hay recursos</h3> </br></div>
-    <div class="row">
-        </div>
-        <div class="login-content">
-        </div>
+    <div style="text-align: center; align-content: center;">
+        <h3 class="titletesa">Aún no hay recursos</h3> </br>
+        <a class="btnrecur" href="'. base_url() .'tesaurocont/'.$id.'">Se el primero en crear un recurso aquí</a>
     </div>
     <script type="text/javascript" src="'. base_url() .'js/main.js"></script>
     <script type="text/javascript" src="'. base_url() .'js/validate.js"></script>

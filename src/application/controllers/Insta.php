@@ -6,13 +6,13 @@
 //Año:2021
 
 /**
- * Class Instalacion
+ * Class Insta
  */
-class Instalacion extends CI_Controller
+class Insta extends CI_Controller
 {
 
     /**
-     * Constructor Instalacion
+     * Constructor Insta
      * Carga librerias y helpers, para después crear la bd y redirigir a Auth
      */
     function __construct()
@@ -154,11 +154,11 @@ COMMIT;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 ";
         $this->conexion->multi_query($consulta);
-        $archivoroutes = fopen(APPPATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'routes.php', "a+");
-        $texto = '$route["default_controller"] = "Auth";';
-        fwrite($archivoroutes, "\n");
-        fwrite($archivoroutes, $texto);
-        fclose($archivoroutes);
+        //$archivoroutes = fopen(APPPATH . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'routes.php', "a+");
+        //$texto = '$route["default_controller"] = "Auth";';
+        //fwrite($archivoroutes, "\n");
+        //fwrite($archivoroutes, $texto);
+        //fclose($archivoroutes);
         redirect("Auth");
     }
 }

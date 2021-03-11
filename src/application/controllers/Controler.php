@@ -99,7 +99,7 @@ class Controler extends CI_Controller {
             $datos = array('consulta'=>$data);
             $this->load->view('profile', $datos);
         }else
-            $this->load->view('vacio');
+            $this->load->view('vacio2');
     }
 
     /**
@@ -116,7 +116,7 @@ class Controler extends CI_Controller {
                 $data = array('consulta'=>$result);
                 $this->load->view('recur', $data);
             }else
-                $this->load->view('vacio');
+                $this->load->view('vacio', array('id' => $id));
         }
     }
 
@@ -186,7 +186,7 @@ class Controler extends CI_Controller {
     { //Codeigniter no deja extender de varias clases y al crear objeto no salen los metodos de la otra clase, asi que repetiré este metodo comprobacion en todos los sitios ¯\_(ツ)_/¯
         $data['google_login_url'] = $this->google->get_login_url();
         if (file_exists(APPPATH . 'controllers\Instalacion.php')) {
-            redirect(Instalacion::class);
+            redirect(Insta::class);
         } else {
             if ($this->session->userdata('sess_logged_in') == 0) {
                 redirect(Auth::class);
