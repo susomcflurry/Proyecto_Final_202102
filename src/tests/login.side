@@ -1,0 +1,21 @@
+{
+  "id": "38103d91-c7b5-4079-9c32-f112fd2a25b4",
+  "version": "2.0",
+  "name": "login",
+  "url": "",
+  "tests": [{
+    "id": "603a917d-6e2c-4169-b12c-8f25b07b3019",
+    "name": "login Correo no Google",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "9e3f6687-d538-430e-bfd3-900494b79228",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["603a917d-6e2c-4169-b12c-8f25b07b3019"]
+  }],
+  "urls": [],
+  "plugins": []
+}

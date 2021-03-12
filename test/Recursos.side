@@ -1,0 +1,21 @@
+{
+  "id": "e60d7803-7dec-4d38-b764-212215961074",
+  "version": "2.0",
+  "name": "Recursos",
+  "url": "http://localhost/dashboard/",
+  "tests": [{
+    "id": "36b8e491-a2ad-4e79-b1d6-9f527a6ddfc3",
+    "name": "Crear recurso",
+    "commands": []
+  }],
+  "suites": [{
+    "id": "e35d6ffa-2f68-4345-86bd-7f5a7139059c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost/dashboard/"],
+  "plugins": []
+}

@@ -16,7 +16,23 @@ echo '
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/a81368914c.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>';
+    </head>
+    <style>
+    .borar, .mod{
+        text-align: center;
+    }
+    .borar{
+    color: #ff5741;
+    }
+    .borar:hover{
+        color: #0d6997;
+        text-decoration: none;
+    }
+    .mod:hover{
+        color: #0d6997;
+        text-decoration: none;
+    }
+</style>';
 include ('menu.php');
 echo'
     <body>
@@ -25,9 +41,9 @@ echo'
     <div class="row">';
 foreach ($consulta->result() as $tesa):
     echo' <div class="col-6 tesa">
-            <a href="'.base_url().'archivos/'.$tesa->url .'" class="tesa">'. $tesa->título . '</a>
-            <a href="'.base_url().'delete/'.$tesa->id.'">Borrar</a>
-            <a href="'.base_url().'mod/'.$tesa->id.'">Modificar</a></div></br> </br>';
+            <a href="'.base_url().'archivos/'.$tesa->url .'" class="tesa" style="margin-top:3%;">'. $tesa->título . '</a>
+            <a href="'.base_url().'delete/'.$tesa->id.'" class="borar">Borrar</a>
+            <a href="'.base_url().'mod/'.$tesa->id.'" class="mod">Modificar</a></div></br> </br>';
 endforeach;
 echo '
         </div>
