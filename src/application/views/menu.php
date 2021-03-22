@@ -5,10 +5,11 @@
 //Proyecto fin de ciclo: Proyecto de Sistema de Gestión del Conocimiento
 //Año:2021
     echo '
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <header>
         <div class="row">
             <div class="col-4">
-                 <img  src="'. base_url() .'img/download.jpg">
+                 <img  alt="Imagen fundacxion loyola"  src="'. base_url() .'img/download.jpg">
             </div>
             <div class="col-8 topnav">
                 <ul>

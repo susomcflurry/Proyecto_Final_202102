@@ -38,7 +38,7 @@ echo '
 include ('menu.php');
 echo'
     <body>
-    <img class="wave2" src="'. base_url() .'img/wave2.png">
+    <img alt="Imagen fondo" class="wave2" src="'. base_url() .'img/wave2.png">
     <div style="text-align: center; align-content: center;">
         <h3 class="titletesa">Aún no hay recursos</h3> </br>
         <a class="btnrecur" href="'. base_url() .'tesaurocont/'.$id.'">Se el primero en crear un recurso aquí</a>

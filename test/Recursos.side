@@ -6,7 +6,562 @@
   "tests": [{
     "id": "36b8e491-a2ad-4e79-b1d6-9f527a6ddfc3",
     "name": "Crear recurso",
-    "commands": []
+    "commands": [{
+      "id": "644da3b8-e939-4ec4-9f2f-1e50854499f2",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Proyecto_Final_202102/src/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f0049296-3f13-431d-8c51-fd4ba86d78ee",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=note_addNuevo Recurso",
+      "targets": [
+        ["linkText=note_addNuevo Recurso", "linkText"],
+        ["css=li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/new']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'note_addNuevo Recurso')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f50c339-a802-4057-ac0c-fec0060dd555",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Grados de formación",
+      "targets": [
+        ["linkText=Grados d", "linkText"],
+        ["css=.col-6:nth-child(1) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'Grados d')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesaurocont/1']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Grados d')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "81aa3f7f-154e-4521-8d8f-500631e3e764",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Daw",
+      "targets": [
+        ["linkText=Daw", "linkText"],
+        ["css=.col-6:nth-child(1) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'Daw')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesaurocont/1.1']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Daw')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbdd4c67-7776-4c27-a32f-3106784f24e3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=1º Daw",
+      "targets": [
+        ["linkText=1º Daw", "linkText"],
+        ["css=.col-6:nth-child(1) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'1º Daw')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesaurocont/1.1.1']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'1º Daw')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f02441d9-00ad-488d-a184-f4d85ec0dbca",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=BBDD 1ºDAW",
+      "targets": [
+        ["linkText=BBDD 1ºDAW", "linkText"],
+        ["css=.col-6:nth-child(1) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'BBDD 1ºDAW')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesaurocont/1.1.1.1']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'BBDD 1ºDAW')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a7021d0-88b0-48ec-8de9-e39c574006d2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.loginbtn",
+      "targets": [
+        ["css=.loginbtn", "css:finder"],
+        ["xpath=//input[@value='Subir registro']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d556f897-c960-43b4-ac91-7440f11444cf",
+      "comment": "",
+      "command": "click",
+      "target": "name=usu",
+      "targets": [
+        ["name=usu", "name"],
+        ["css=.input", "css:finder"],
+        ["xpath=//input[@name='usu']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a65aef6-8124-40b5-8b82-18389dee0b59",
+      "comment": "",
+      "command": "type",
+      "target": "name=usu",
+      "targets": [
+        ["name=usu", "name"],
+        ["css=.input", "css:finder"],
+        ["xpath=//input[@name='usu']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Titulo para prueba"
+    }, {
+      "id": "0c438440-5be8-42b1-9638-394b46485442",
+      "comment": "",
+      "command": "click",
+      "target": "css=.loginbtn",
+      "targets": [
+        ["css=.loginbtn", "css:finder"],
+        ["xpath=//input[@value='Subir registro']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "960d1fa2-2c77-4bc6-8253-2387fa987eb9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.registro",
+      "targets": [
+        ["css=.registro", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28953b35-590a-4b25-b3e9-4e9ed02480fb",
+      "comment": "",
+      "command": "type",
+      "target": "name=descripcion",
+      "targets": [
+        ["name=descripcion", "name"],
+        ["css=.textbox", "css:finder"],
+        ["xpath=//textarea[@name='descripcion']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Esta es la. descripción del recurso que estamos creando"
+    }, {
+      "id": "08db7c7f-baa6-4dc0-a893-f1c14e365db1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.loginbtn",
+      "targets": [
+        ["css=.loginbtn", "css:finder"],
+        ["xpath=//input[@value='Subir registro']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d9a1a6d-9bc6-4218-be48-b732722b8ffd",
+      "comment": "",
+      "command": "click",
+      "target": "name=file",
+      "targets": [
+        ["name=file", "name"],
+        ["css=.file > input", "css:finder"],
+        ["xpath=//input[@name='file']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a01428cb-6a37-4966-a496-ca388506ed36",
+      "comment": "",
+      "command": "type",
+      "target": "name=file",
+      "targets": [
+        ["name=file", "name"],
+        ["css=.file > input", "css:finder"],
+        ["xpath=//input[@name='file']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Planoesquematico.pdf"
+    }, {
+      "id": "ba794787-f5d4-46ca-92f7-175b9fb171fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.loginbtn",
+      "targets": [
+        ["css=.loginbtn", "css:finder"],
+        ["xpath=//input[@value='Subir registro']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "cda2e6ca-d440-4b62-934c-87003219ba15",
+    "name": "Buscar un recurso",
+    "commands": [{
+      "id": "7a51d78a-14aa-4c8b-b31c-2c73ef109e09",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Proyecto_Final_202102/src/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "243599d0-071d-4d88-87c8-af91bebf33cc",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bachillerato",
+      "targets": [
+        ["linkText=Bachillerato", "linkText"],
+        ["css=.col-6:nth-child(4) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'Bachillerato')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesauroconsult/2']", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Bachillerato')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fef8bb4-3347-4cfc-a1be-dee6061b9cec",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Se el primero en crear un recurso aquí",
+      "targets": [
+        ["linkText=Se el primero en crear un recurso aquí", "linkText"],
+        ["css=.btnrecur", "css:finder"],
+        ["xpath=//a[contains(text(),'Se el primero en crear un recurso aquí')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesaurocont/2']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Se el primero en crear un recurso aquí')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a72001c1-08a2-4d8e-9bde-f09eaf74098c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=searchBuscar recurso",
+      "targets": [
+        ["linkText=searchBuscar recurso", "linkText"],
+        ["css=li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'searchBuscar recurso')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6fb9bcf5-4dfb-46f4-9df2-5cf8f887dede",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Grados de formación",
+      "targets": [
+        ["linkText=Grados d", "linkText"],
+        ["css=.col-6:nth-child(1) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'Grados d')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesauroconsult/1']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Grados d')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f79c28d-9feb-493b-8392-d004decd1ccb",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Daw",
+      "targets": [
+        ["linkText=Daw", "linkText"],
+        ["css=.col-6:nth-child(1) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'Daw')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesauroconsult/1.1']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Daw')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd491ed9-996e-4464-a78a-31a18bd9b942",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=1º Daw",
+      "targets": [
+        ["linkText=1º Daw", "linkText"],
+        ["css=.col-6:nth-child(1) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'1º Daw')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesauroconsult/1.1.1']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'1º Daw')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "923fe784-8b2d-4178-bed9-ece3b362dac3",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=BBDD 1ºDAW",
+      "targets": [
+        ["linkText=BBDD 1ºDAW", "linkText"],
+        ["css=.col-6:nth-child(1) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'BBDD 1ºDAW')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/tesauroconsult/1.1.1.1']", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'BBDD 1ºDAW')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3755277-9749-4629-ac89-570fcf5ceb26",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Titulo para prueba",
+      "targets": [
+        ["linkText=Titulo para prueba", "linkText"],
+        ["css=.col-6:nth-child(7) > .tesa", "css:finder"],
+        ["xpath=//a[contains(text(),'Titulo para prueba')]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/archivos/condiciones_generales_del_seguro_isic2.pdf']", "xpath:href"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Titulo para prueba')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "01124c0a-86ed-4704-9d08-221ad965931d",
+    "name": "Modificar un recurso",
+    "commands": [{
+      "id": "64d57d6a-0624-4164-8102-8e70a429a926",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Proyecto_Final_202102/src/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c53a07ca-8a0b-4c7f-8055-1c39ade8fb9c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=attachmentMis Recursos",
+      "targets": [
+        ["linkText=attachmentMis Recursos", "linkText"],
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/me']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'attachmentMis Recursos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed4d4d6a-5475-4269-b7dc-8397c8f54650",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-6:nth-child(10) > .mod",
+      "targets": [
+        ["css=.col-6:nth-child(10) > .mod", "css:finder"],
+        ["xpath=(//a[contains(text(),'Modificar')])[4]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/mod/20']", "xpath:href"],
+        ["xpath=//div[4]/a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d3b4e6f-71e3-4ac3-a7c4-a34fe610e84c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.registro",
+      "targets": [
+        ["css=.registro", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aa963c6-6dbe-42c5-afa9-e3cb7dd05401",
+      "comment": "",
+      "command": "type",
+      "target": "name=usu",
+      "targets": [
+        ["name=usu", "name"],
+        ["css=.input", "css:finder"],
+        ["xpath=//input[@name='usu']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "591df3e8-8ac4-4f8b-b02c-138591fcbaf1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.loginbtn",
+      "targets": [
+        ["css=.loginbtn", "css:finder"],
+        ["xpath=//input[@value='Modificar']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db5bd0e3-9202-4930-bb2a-3d5036969c93",
+      "comment": "",
+      "command": "type",
+      "target": "name=usu",
+      "targets": [
+        ["name=usu", "name"],
+        ["css=.input", "css:finder"],
+        ["xpath=//input[@name='usu']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Titulo"
+    }, {
+      "id": "f1b80978-0266-4b0c-941c-181fb77b2b7a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.registro",
+      "targets": [
+        ["css=.registro", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8142e722-4365-46fc-90c1-8877663857a2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.registro",
+      "targets": [
+        ["css=.registro", "css:finder"],
+        ["xpath=//body/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "145e213b-7692-4807-af01-812120261b20",
+      "comment": "",
+      "command": "type",
+      "target": "name=descripcion",
+      "targets": [
+        ["name=descripcion", "name"],
+        ["css=.textbox", "css:finder"],
+        ["xpath=//textarea[@name='descripcion']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "72fdf7ca-82c9-447d-b560-f0f5f67e2715",
+      "comment": "",
+      "command": "click",
+      "target": "css=.loginbtn",
+      "targets": [
+        ["css=.loginbtn", "css:finder"],
+        ["xpath=//input[@value='Modificar']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f2b0cf2-598e-489b-9185-70d0f8566424",
+      "comment": "",
+      "command": "type",
+      "target": "name=descripcion",
+      "targets": [
+        ["name=descripcion", "name"],
+        ["css=.textbox", "css:finder"],
+        ["xpath=//textarea[@name='descripcion']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Texto de prueba para la modificacion "
+    }, {
+      "id": "6daff684-030c-40a1-bcce-c9c17d515032",
+      "comment": "",
+      "command": "click",
+      "target": "css=.loginbtn",
+      "targets": [
+        ["css=.loginbtn", "css:finder"],
+        ["xpath=//input[@value='Modificar']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c5c90039-54cb-432f-a216-5e5a27cdf111",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-6:nth-child(10) > .mod",
+      "targets": [
+        ["css=.col-6:nth-child(10) > .mod", "css:finder"],
+        ["xpath=(//a[contains(text(),'Modificar')])[4]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/mod/20']", "xpath:href"],
+        ["xpath=//div[4]/a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ef23ce7-f7ce-48bb-86d5-4e5431e0f07f",
+      "comment": "",
+      "command": "click",
+      "target": "name=file",
+      "targets": [
+        ["name=file", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='file']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34e39e08-fc5d-4ee6-a12d-78bfa075b716",
+      "comment": "",
+      "command": "type",
+      "target": "name=file",
+      "targets": [
+        ["name=file", "name"],
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@name='file']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\contrato-1081.pdf"
+    }, {
+      "id": "af9ad1aa-65a0-4992-84c4-0f348cd6ac6b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.loginbtn",
+      "targets": [
+        ["css=.loginbtn", "css:finder"],
+        ["xpath=//input[@value='Modificar']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f3562e74-f807-4a0f-ae3e-ad69aa9b8de8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Titulo",
+      "targets": [
+        ["linkText=Titulo", "linkText"],
+        ["css=.col-6:nth-child(10) > .tesa", "css:finder"],
+        ["xpath=(//a[contains(text(),'Titulo')])[2]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/archivos/contrato-10812.pdf']", "xpath:href"],
+        ["xpath=//div[4]/a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "dc1dd043-8a75-42fd-ad40-d95c95c3fb73",
+    "name": "Borrar un recurso",
+    "commands": [{
+      "id": "5e17fe6e-2f10-4808-936a-fbf7e0fa8384",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/Proyecto_Final_202102/src/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef0b829b-6dae-44fc-bb79-6a50e137b88b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=attachmentMis Recursos",
+      "targets": [
+        ["linkText=attachmentMis Recursos", "linkText"],
+        ["css=li:nth-child(3) > a", "css:finder"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/me']", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'attachmentMis Recursos')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a5d0bd0-3cf9-4015-9085-a8851a2806b6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-6:nth-child(10) > .borar",
+      "targets": [
+        ["css=.col-6:nth-child(10) > .borar", "css:finder"],
+        ["xpath=(//a[contains(text(),'Borrar')])[4]", "xpath:link"],
+        ["xpath=//a[@href='http://localhost/Proyecto_Final_202102/src/delete/21']", "xpath:href"],
+        ["xpath=//div[4]/a[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "e35d6ffa-2f68-4345-86bd-7f5a7139059c",
@@ -16,6 +571,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["http://localhost/dashboard/"],
+  "urls": ["http://localhost/dashboard/", "http://localhost/Proyecto_Final_202102/src/"],
   "plugins": []
 }

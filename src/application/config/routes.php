@@ -56,6 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['log']='Auth/oauth2callback';
 $route['logout']='Auth/logout';
+$route['Controler']='Auth';
 $route['me']='Controler/profile';
 $route['signup']='Controler/registro';
 $route['alta']='Controler/alta';

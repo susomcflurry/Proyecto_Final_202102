@@ -20,7 +20,7 @@ echo '
 include ('menu.php');
 echo'
     <body>
-    <img class="wave2" src="'. base_url() .'img/wave2.png">
+    <img alt="Imagen fondo" class="wave2" src="'. base_url() .'img/wave2.png">
     <div><h3 class="titletesa">Aún no hay recursos</h3> </br></div>
     <div class="row">
         </div>

@@ -20,7 +20,7 @@ echo '
 include ('menu.php');
 echo'
     <body>
-    <img class="wave2" src="'. base_url() .'img/wave2.png">
+    <img alt="Imagen fondo"  class="wave2" src="'. base_url() .'img/wave2.png">
     <div class="row registro" style="text-align: center; align-content: center; margin: 0 auto;">';
 foreach ($consulta->result() as $tesa):
 echo form_open_multipart('Controler/modrecur/'.$tesa->id);

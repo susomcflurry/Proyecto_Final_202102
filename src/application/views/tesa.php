@@ -20,7 +20,7 @@ echo '
 include ('menu.php');
 echo'
     <body>
-    <img class="wave2" src="'. base_url() .'img/wave2.png">
+    <img alt="Imagen fondo"  class="wave2" src="'. base_url() .'img/wave2.png">
     <div><h3 class="titletesa">Elige uno</h3> </br></div>
     <div class="row">';
 foreach ($consulta->result() as $tesa):
